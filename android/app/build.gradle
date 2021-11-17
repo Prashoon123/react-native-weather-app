@@ -79,7 +79,8 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
-    enableHermes: false,  // clean and rebuild if changing
+    entryFile: "index.js",
+    enableHermes: true,  // clean and rebuild if changing
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
@@ -135,8 +136,8 @@ android {
         applicationId "app.web.prashoonapps.weatherapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 5
-        versionName "1.4"
+        versionCode 6
+        versionName "1.5"
     }
     splits {
         abi {

@@ -1,4 +1,6 @@
 package app.web.prashoonapps.weatherapp;
+import expo.modules.ReactActivityDelegateWrapper;
+import com.facebook.react.ReactActivityDelegate;
 
 import android.os.Bundle; // here 
 import com.facebook.react.ReactActivity;
@@ -21,4 +23,11 @@ public class MainActivity extends ReactActivity {
         SplashScreen.show(this);  // here
         super.onCreate(savedInstanceState);
     }
+
+  @Override
+  protected ReactActivityDelegate createReactActivityDelegate() {
+    return new ReactActivityDelegateWrapper(this,
+      new ReactActivityDelegate(this, getMainComponentName())
+    );
+  }
 }
